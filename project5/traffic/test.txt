@@ -1,0 +1,36 @@
+TRY 1
+Dropout=0.1
+Layer1- NUM_CATEGORIES*16
+Layer2- NUM_CATEGORIES*8
+Layer3- NUM_CATEGORIES*4
+Layer4- NUM_CATEGORIES*2
+Layer5- NUM_CATEGORIES*1
+loss: 0.2001, accuracy: 0.9481
+#best arrangement model and best dropout value
+
+TRY 2
+Dropout = 0.2
+Layer1- NC*1
+Layer2- NC*4
+Layer3- NC*8
+Layer4- NC*4
+Layer5- NC*1
+loss:0.4300 , accuracy:0.8699
+#vortex structured network, low accuracy but fast runtime
+
+TRY 3
+Dropout = 0.5
+Layer1- NC*64
+Layer2- NC*32
+Layer3- NC*16
+Layer4- NC*8
+Layer5- NC*4
+Layer6- NC*2
+Layer7- NC*1
+loss:0.3363 , accuracy:0.9381
+#too many layers caused prolonged runtime with unsatisfying accuracy
+
+TRY 4
+Dropout = 0.1
+arrangement same as TRY1 but with dropouts interlaced between hidden layers
+#lower initial accuracy but higher final and overall accuracy
